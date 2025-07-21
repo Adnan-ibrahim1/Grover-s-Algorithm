@@ -1,13 +1,13 @@
 
 ---
 
-## 🧠 Grover's Algorithm SAT Solver
+##  Grover's Algorithm SAT Solver
 
 This project demonstrates how Grover's quantum search algorithm can be applied to solve **Boolean Satisfiability Problems (SAT)** using Qiskit.
 
 ---
 
-### 📋 Features
+###  Features
 
 * Parses CNF formulas input by the user.
 * Constructs a quantum oracle that marks satisfying assignments.
@@ -17,7 +17,7 @@ This project demonstrates how Grover's quantum search algorithm can be applied t
 
 ---
 
-### 🛠️ Requirements
+###  Requirements
 
 * Python 3.7+
 * Qiskit
@@ -26,7 +26,7 @@ This project demonstrates how Grover's quantum search algorithm can be applied t
 
 ---
 
-### 🚀 Usage
+###  Usage
 
 Run the main script:
 
@@ -49,7 +49,7 @@ You will be prompted to enter a Boolean formula in **Conjunctive Normal Form (CN
 
 ---
 
-### 🧮 Example
+###  Example
 
 Input:
 
@@ -79,7 +79,7 @@ A histogram will be displayed showing the probability distribution of results.
 
 ---
 
-### 📂 Project Structure
+###  Project Structure
 
 ```
 .
@@ -89,7 +89,7 @@ A histogram will be displayed showing the probability distribution of results.
 
 ---
 
-### 🧠 How It Works
+###  How It Works
 
 1. **Parse Formula**: Converts user input into a structured list of clauses.
 2. **Oracle Construction**: Uses ancilla qubits to mark assignments that satisfy all clauses.
@@ -99,7 +99,7 @@ A histogram will be displayed showing the probability distribution of results.
 
 ---
 
-### 📈 Future Improvements
+###  Future Improvements
 
 * Add GUI or web interface.
 * Support for arbitrary Boolean formulas (not just CNF).
@@ -107,7 +107,7 @@ A histogram will be displayed showing the probability distribution of results.
 
 ---
 
-### 📜 License
+### � License
 
 This project is open-source and available under the MIT License.
 
