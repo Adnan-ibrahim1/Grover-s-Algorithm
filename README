@@ -1,58 +1,115 @@
-# Grover's Algorithm for Boolean Satisfiability (SAT)
-
-This project demonstrates the application of **Grover's Quantum Search Algorithm** to solve a simple **3-variable SAT (Boolean Satisfiability)** problem using Qiskit.
-
-## 📌 Problem Statement
-
-We solve the SAT formula:
-
-```
-(x1 OR x2 OR NOT x3) AND (NOT x1 OR x2 OR x3)
-```
-
-using Grover's algorithm to find satisfying assignments for the boolean variables `x1`, `x2`, and `x3`.
-
-## 🎯 Objective
-
-To find inputs (bitstrings) that satisfy the formula using Grover’s quantum search approach, which provides a quadratic speedup over classical brute-force algorithms.
 
 ---
 
-## 📁 Project Structure
+## 🧠 Grover's Algorithm SAT Solver
+
+This project demonstrates how Grover's quantum search algorithm can be applied to solve **Boolean Satisfiability Problems (SAT)** using Qiskit.
+
+---
+
+### 📋 Features
+
+* Parses CNF formulas input by the user.
+* Constructs a quantum oracle that marks satisfying assignments.
+* Uses Grover's algorithm with a customizable number of iterations.
+* Verifies and displays satisfying results using quantum simulation.
+* Visualizes output using a histogram of measured states.
+
+---
+
+### 🛠️ Requirements
+
+* Python 3.7+
+* Qiskit
+* NumPy
+* Matplotlib
+
+---
+
+### 🚀 Usage
+
+Run the main script:
+
+```bash
+python main.py
+```
+
+You will be prompted to enter a Boolean formula in **Conjunctive Normal Form (CNF)**, e.g.:
 
 ```
-grover-sat-solver/
-├── src/
-│   └── grover_password_search.py  # Main Grover SAT solver implementation
-├── requirements.txt               # Python dependencies
-├── .gitignore                     # Files to exclude from Git
-├── README.md                      # Documentation
-└── venv/                          # (optional) Virtual environment folder
+(x0 OR ~x1) AND (~x0 OR x2)
 ```
 
+**Notes:**
 
-## 📊 Output
+* Use `x0`, `x1`, etc. for variable names.
+* Use `~` for negation.
+* Parentheses `()` are required for each clause.
+* Use `AND` to separate clauses, and `OR` to separate literals within a clause.
 
-The script prints the most likely satisfying assignments and displays a histogram of results:
+---
+
+### 🧮 Example
+
+Input:
 
 ```
-Satisfying assignments: {'110': 512, '111': 400, ...}
+(x0 OR ~x1) AND (~x0 OR x2)
+```
+
+Sample output:
+
+```
+Using 3 Grover iterations for 3 variables
+
+Parsed formula with 3 variables and 2 clauses:
+  Clause 1: (x0 OR ~x1)
+  Clause 2: (~x0 OR x2)
+
+Measurement Results:
+  101: 180 shots - ✓ SAT
+  110: 120 shots - ✗ UNSAT
+  ...
+
+Found 2 satisfying assignment(s)!
+Most frequent satisfying assignment: 101
+```
+
+A histogram will be displayed showing the probability distribution of results.
+
+---
+
+### 📂 Project Structure
+
+```
+.
+├── main.py           # Main Grover SAT solver script
+├── README.md         # Project documentation
 ```
 
 ---
 
-## 🧠 Concepts Demonstrated
+### 🧠 How It Works
 
-* Boolean SAT encoding as quantum oracles
-* Multi-controlled Toffoli gates
-* Grover diffusion operator
-* Quantum circuit simulation with Qiskit’s Aer backend
-* Quantum algorithm visualization
+1. **Parse Formula**: Converts user input into a structured list of clauses.
+2. **Oracle Construction**: Uses ancilla qubits to mark assignments that satisfy all clauses.
+3. **Grover Iterations**: Amplifies the probability of satisfying assignments.
+4. **Measurement**: Outputs the most probable variable assignments.
+5. **Verification**: Classifies each measured result as satisfying or not.
 
 ---
 
-## 📜 License
+### 📈 Future Improvements
 
-MIT License
+* Add GUI or web interface.
+* Support for arbitrary Boolean formulas (not just CNF).
+* Integration with real quantum hardware.
 
-## 👤 Author
+---
+
+### 📜 License
+
+This project is open-source and available under the MIT License.
+
+---
+
