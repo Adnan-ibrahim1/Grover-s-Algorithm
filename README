@@ -1,0 +1,58 @@
+# Grover's Algorithm for Boolean Satisfiability (SAT)
+
+This project demonstrates the application of **Grover's Quantum Search Algorithm** to solve a simple **3-variable SAT (Boolean Satisfiability)** problem using Qiskit.
+
+## 📌 Problem Statement
+
+We solve the SAT formula:
+
+```
+(x1 OR x2 OR NOT x3) AND (NOT x1 OR x2 OR x3)
+```
+
+using Grover's algorithm to find satisfying assignments for the boolean variables `x1`, `x2`, and `x3`.
+
+## 🎯 Objective
+
+To find inputs (bitstrings) that satisfy the formula using Grover’s quantum search approach, which provides a quadratic speedup over classical brute-force algorithms.
+
+---
+
+## 📁 Project Structure
+
+```
+grover-sat-solver/
+├── src/
+│   └── grover_password_search.py  # Main Grover SAT solver implementation
+├── requirements.txt               # Python dependencies
+├── .gitignore                     # Files to exclude from Git
+├── README.md                      # Documentation
+└── venv/                          # (optional) Virtual environment folder
+```
+
+
+## 📊 Output
+
+The script prints the most likely satisfying assignments and displays a histogram of results:
+
+```
+Satisfying assignments: {'110': 512, '111': 400, ...}
+```
+
+---
+
+## 🧠 Concepts Demonstrated
+
+* Boolean SAT encoding as quantum oracles
+* Multi-controlled Toffoli gates
+* Grover diffusion operator
+* Quantum circuit simulation with Qiskit’s Aer backend
+* Quantum algorithm visualization
+
+---
+
+## 📜 License
+
+MIT License
+
+## 👤 Author
